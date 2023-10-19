@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, render_template
 
 # create object of the class
 app = Flask(__name__)
@@ -7,7 +7,8 @@ app = Flask(__name__)
 #create route - registering route after domain name and define function under this router
 @app.route('/')
 def hello():
-  return 'Hello World!'
+  return render_template('home.html')
+
 
 #to run locally
 if __name__ == "__main__":
