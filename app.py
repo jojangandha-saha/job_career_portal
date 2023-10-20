@@ -25,7 +25,6 @@ JOBS = [{
     'title': 'Frontend Engineer',
     'location': 'Remote',
     'salary': '60k'
-}
 }]
 
 
