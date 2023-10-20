@@ -4,10 +4,11 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
   <!-- task : change the icon   -->
   <title>Career Portal</title>
- <style>
-   *{
+  <style>
+   /* *{
       margin: 0;
       padding: 0;
       box-sizing: border-box;
@@ -20,13 +21,13 @@
      color : rgb(100,100,100);
      text-align: center
 
-   }
+   } */
    #banner{
      width: 100%;
      height: 360px;
      object-fit: cover;
    }
-   h2{
+   /* h2{
      font-family: roboto;
      font-size : 32px;
      color: rgb(50, 50, 50);
@@ -41,21 +42,27 @@
    }
    .container{
      max-width : 720px;
-     margin : 0 auto 0 auto;
-   }
+     margin : 0 auto 0 auto; */
+   <!-- }  -->
  </style>
 </head>
 <body>
   <div class="container">
-    <h1>LinkIn Careers</h1>
-    <img src="./static/hero-bg.jpg" id ="banner" alt ="hero-img">
-    <h2>About LinkIn</h2>
-    <p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent semper feugiat nibh sed pulvinar proin. Et malesuada fames ac turpis egestas. Amet porttitor eget dolor morbi non. Sem et tortor consequat id porta. Ut ornare lectus sit amet est. Pellentesque massa placerat duis ultricies lacus sed turpis tincidunt. Sed arcu non odio euismod. Id interdum velit laoreet id donec ultrices tincidunt arcu. Purus ut faucibus pulvinar elementum integer enim neque.</p>
-    <h2>Job Openings</h2>
-    <p class="text">show the title</p>
-    <div style = "text-align : center;"> 
-      <button>Contact Us</button>
-      <p>Copyright 2023, LinkIn</p>
+    <h1 class="text-center mt-2 mb-4">{{company_name}} Careers</h1>
+    <img src="./static/hero-bg.jpg" class ="img-fluid"id ="banner" alt ="hero-img" style = "border-radius : 5px;">
+    <h2 class="text-center">About LinkIn</h2>
+    <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent semper feugiat nibh sed pulvinar proin. Et malesuada fames ac turpis egestas. Amet porttitor eget dolor morbi non. Sem et tortor consequat id porta. Ut ornare lectus sit amet est. Pellentesque massa placerat duis ultricies lacus sed turpis tincidunt. Sed arcu non odio euismod. Id interdum velit laoreet id donec ultrices tincidunt arcu. Purus ut faucibus pulvinar elementum integer enim neque.</p>
+    <h2 class="text-center mt-2 mb-4">Job Openings</h2>
+    <div>
+   <!-- flask provided template for dynamic data   ,list converted into string, passing dynamic data-->
+      
+      {% for job in jobs %}
+    {% include 'jobitem.html' %}
+      {% endfor %}
+    </div>
+    <div class="text-center"> 
+      <button class="btn btn-outline-primary">Contact Us</button>
+      <p class ="mt-4">Copyright 2023, LinkIn</p>
     </div>
       
   </div>
